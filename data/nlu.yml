@@ -1,0 +1,183 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - हे
+    - हाय
+    - नमस्ते
+    - हेल्लो
+    - चलिए शुरू करते है
+    - चलो
+    - क्या आप सुन रहे हो
+    - क्या आप बोत हो
+    - nameste
+
+
+- intent: new_order
+  examples: |
+    - मुझे नया आर्डर देना है
+    - मेरा आर्डर सुरु करो
+    - मुझे आर्डर करना है
+    - नया आर्डर शुरू करो
+    - नया आर्डर 
+    - आर्डर करो
+
+- intent: add_items_to_order
+  examples: |
+    - [3](quantity) [samosa](product) भी  दे दी जिए
+    - [३](quantity) [samosa](product) भी  दे दी जिए
+    - और  [5](quantity) [pizza](product) आर्डर करो 
+    - और  [५](quantity) [pizza](product) आर्डर करो 
+    - मुझे [2](quantity) [burger](product) चाहिए
+    - मुझे [२](quantity) [burger](product) चाहिए
+    - [ragda](product) [15](quantity)  जोड़े 
+    - [ragda](product) [१५](quantity)  जोड़े 
+    - [21](quantity) [vadapav](product) और [2](quantity) [pavbhaji](product) भी देना
+    - [१४](quantity) [vadapav](product) और [२९](quantity) [pavbhaji](product) भी देना
+    - [21](quantity) [vadapav](product) और [2](quantity) [pavbhaji](product) भी देना
+    - [७](quantity) [vadapav](product) और [२३](quantity) [pavbhaji](product) भी देना
+    - और  हाँ  [1](quantity) [panipuri](product)
+    - [46](quantity) [panipuri](product) जोड़ दे
+    - [४](quantity) [samosa](product) 
+    - [12](quantity) [ragda](product)
+    - [pavbhaji](product) [34](quantity) 
+    - [vadapav](product) [१२](quantity)
+    - [11](quantity) [burger](product)
+- regex: quantity
+  examples: |
+    - 5
+    - 3
+    - 2
+    - 21
+    - 1
+    - 19
+    - 13
+    - 15
+    - १५
+    - २
+    - ५ 
+    - १०
+    - २३
+    - ३
+- regex: product
+  examples: |
+    - samosa
+    - pizza
+    - chocolate
+    - burger
+    - vadapav
+    - pavbhaji
+    - panipuri
+    - ragda
+
+
+- intent: remove_items_from_order
+  examples: |
+    - [46](quantity) [panipuri](product) कम करो
+    - [२१](quantity) [panipuri](product) कम करो
+    - [3](quantity) [samosa](product) भी कम करो
+    - [८](quantity) [samosa](product) भी कम करो 
+    - और  [४](quantity) [pizza](product) कम करो  
+    - [3](quantity) [ragda](product) कम करो
+- regex: quantity
+  examples: |
+    - 5
+    - 3
+    - 2
+    - 5
+    - 46
+    - 19
+    - 13
+    - 15
+    - १
+    - २
+    - ५ 
+    - २१
+    - ८
+    - ४
+
+- regex: product
+  examples: |
+    - samosa
+    - pizza
+    - chocolate
+    - burger
+    - vadapav
+    - pavbhaji
+    - panipuri
+    - ragda
+
+
+- intent: track_order 
+  examples: |
+    - [46](quantity) ट्रैक करो
+    - ये रही  मेरी आर्डर ID [२१](quantity) 
+    - ट्रैक करो [3](quantity) 
+    - track [4](quantity)
+    - ट्रैक [१९](quantity)
+    - [८](quantity) ट्रैक  
+- regex: quantity
+  examples: |
+    - 5
+    - 3
+    - 2
+    - 5
+    - 46
+    - 19
+    - 13
+    - 15
+    - १
+    - २
+    - ५ 
+    - २१
+    - ८
+    - ४
+
+
+- intent: goodbye
+  examples: |
+    - चलते हैं
+    - गुड बाय
+    - फिर मिलेंगे
+    - बाय
+    - आप का दिन शुभ को
+    - चलता हूँ
+
+
+- intent: order_checkout
+  examples: |
+    - नहीं बस
+    - नहीं बस बहुत हुआ
+    - इतना काफी है
+    - बस रहने दो
+    - नो
+    - नहीं
+    - no
+    - बस
+  
+
+
+- intent: order_finish
+  examples: |
+
+    - हाँ
+    - जी हा
+    - हां
+    - एस
+    - येस
+    - हा
+
+
+- intent: bot_challenge
+  examples: |
+    - क्या आप बोत हो?
+    - क्या तुम इंसान हो?
+    - क्या मैं बोत से बात कर रहा हु?
+    - क्या मैं इंसान से बात कर रहा हु?
+
+- intent: restart
+  examples: |
+    - आर्डर पूरा हुआ 
+    - आर्डर ख़तम  हुआ 
+ 

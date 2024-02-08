@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rasa ChatBot</title>
+</head>
+<body>
+  <h2> My Rasa Chatbot</h2>
+    <script>!(function () {
+      let e = document.createElement("script"),
+        t = document.head || document.getElementsByTagName("head")[0];
+      (e.src =
+        "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+        // Replace 1.x.x with the version that you want
+        (e.async = !0),
+        (e.onload = () => {
+          window.WebChat.default(
+            {
+              initPayload: '/greet',
+              customData: { language: "en" },
+              socketUrl: "http://localhost:5005",
+              title: "रासा चटबॉट",
+              subtitle: "चैटिंग सुरू करने के लिए हेलो टाइप करे ",
+              // add other props here
+            },
+            null
+          );
+        }),
+        t.insertBefore(e, t.firstChild);
+    })();
+    while (chatContainer.firstChild) {
+    chatContainer.removeChild(chatContainer.firstChild);
+  }
+    </script>
+</body>
+</html>

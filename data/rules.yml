@@ -1,0 +1,62 @@
+version: "3.1"
+
+
+
+rules:
+
+- rule: start interaction
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: start the new order
+  steps:
+  - intent: new_order
+  - action: utter_new_order
+
+- rule: add items to order
+  steps:
+  - intent: add_items_to_order
+  - action: action_add_items_to_order
+
+
+- rule: order chaeckout 
+  steps:
+  - intent: order_checkout
+  - action: action_order_checkout
+
+- rule: finish the order 
+  steps:
+  - intent: order_finish
+  - action: action_order_finish
+  - action: action_clear_conversation
+
+- rule: remove items from order 
+  steps:
+  - intent: remove_items_from_order
+  - action: action_remove_items_from_order
+
+
+- rule: track the order by ID 
+  steps:
+  - intent: track_order
+  - action: action_track_order
+
+
+- rule: my order finished and restart
+  steps:
+  - intent: restart
+  - action: action_restart
+
+
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

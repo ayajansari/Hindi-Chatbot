@@ -1,0 +1,45 @@
+version: "3.1"
+
+intents:
+  - greet
+  - new_order
+  - add_items_to_order
+  - goodbye
+  - order_checkout
+  - order_finish
+  - remove_items_from_order
+  - track_order
+  - bot_challenge
+  - restart
+
+entities:
+
+  - quantity
+  - product
+
+actions:
+  - action_order_checkout
+  - action_add_items_to_order
+  - action_remove_items_from_order
+  - action_order_finish
+  - action_clear_conversation
+  - action_track_order
+  - action_restart
+
+responses:
+  utter_greet:
+  - text: "आपका स्वागत है | कहीये मैं आप की कैसे  सहायता कर सकता हु |"
+
+  utter_new_order:
+  - text: "आपका आर्डर शुरू हो गया है | कृपया व्यंजन और संख्या दर्ज कर |"
+
+
+  utter_goodbye:
+  - text: "फिर मिलेंगे"
+
+  utter_iamabot:
+  - text: "मैं एक बॉट हु, जो रसा द्वारा निर्मित की गयी है |"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
